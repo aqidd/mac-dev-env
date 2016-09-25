@@ -27,25 +27,21 @@ brew install git
 
 #update path
 echo "update coreutils path"
-echo export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" >> ~/.bash_profile
+echo 'export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.bash_profile
 
 #install node
 echo "install node"
 brew update
 brew install node
 
-#install composer
+#install global composer
 echo "install composer"
 brew install homebrew/php/composer
-
-#add composer bin directory to path
-echo "update composer path"
-echo "export PATH=\"~/.composer/vendor/bin:$PATH\"" >> ~/.bash_profile
 
 #install laravel valet
 echo "install valet"
 brew install homebrew/php/php70
-echo "export PATH="/usr/local/bin:$PATH""
+echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
 composer global require laravel/valet
 valet install
 
@@ -102,6 +98,9 @@ apps=(
 
 echo “installing apps”
 brew cask install --appdir="/Applications" ${apps[@]}
+
+#install android-sdk
+brew install android-sdk
 
 #install mac app store command line
 brew install mas
