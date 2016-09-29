@@ -5,6 +5,9 @@ clear;
 #add custom bash profile
 touch ~/.bash_profile
 
+#install xcode dev tools
+xcode-select --install
+
 #install brew
 echo "installing brew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
