@@ -114,6 +114,9 @@ echo 'export PATH=${JAVA_HOME}/bin:$PATH' >> ~/.bash_profile
 echo '# Add the Android SDK to the PATH variable' >> ~/.bash_profile
 echo 'export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools' >> ~/.bash_profile
 
+#install cocoapods
+brew install cocoapods
+
 #install mac app store command line
 brew install mas
 
