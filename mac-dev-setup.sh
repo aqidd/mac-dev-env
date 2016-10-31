@@ -77,6 +77,7 @@ apps=(
 	google-chrome
 	imageoptim
 	java
+	macdown
 	onyx
 	postman
 	qlcolorcode
@@ -98,6 +99,7 @@ apps=(
 	tinygrab
 	the-unarchiver
 	vlc
+	veertu-desktop
 )
 
 echo “installing apps”
