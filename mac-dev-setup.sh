@@ -80,6 +80,7 @@ apps=(
 	macdown
 	onyx
 	postman
+	puush
 	qlcolorcode
   	qlimagesize
 	qlmarkdown
@@ -96,7 +97,6 @@ apps=(
 	spotify
 	sublime-text
 	suspicious-package
-	tinygrab
 	the-unarchiver
 	vlc
 	veertu-desktop
