@@ -79,6 +79,7 @@ apps=(
 	java
 	macdown
 	onyx
+	postgres
 	postman
 	puush
 	qlcolorcode
@@ -100,6 +101,7 @@ apps=(
 	the-unarchiver
 	vlc
 	veertu-desktop
+	zeplin
 )
 
 echo “installing apps”
