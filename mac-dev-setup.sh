@@ -46,6 +46,8 @@ echo "install valet"
 brew install homebrew/php/php70
 echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
 composer global require laravel/valet
+echo 'export PATH=~/.composer/vendor/bin:$PATH' >> ~/.bash_profile
+source ~/.bash_profile
 valet install
 
 #install mariadb
@@ -109,6 +111,8 @@ brew cask install --appdir="/Applications" ${apps[@]}
 
 #install android-sdk
 brew install android-sdk
+#update platform-tools
+android update sdk --no-ui --filter 'platform-tools'
 
 #add JAVA_HOME & ANDROID_HOME
 echo '# Create a JAVA_HOME variable, determined dynamically' >> ~/.bash_profile
@@ -129,6 +133,9 @@ mas install 539883307
 
 #install Telegram Desktop
 mas install 946399090
+
+#install XCode
+mas install 497799835
 
 #add to dock
 #google chrome
