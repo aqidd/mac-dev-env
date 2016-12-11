@@ -162,7 +162,9 @@ killall Dock
 #extras: ionic & cordova for hybrid mobile app development
 # sudo npm install -g cordova
 # sudo npm install -g ionic
+# sudo npm install -g ionic@1.7.16 #for your old ionic project
 # sudo npm install -g ios-sim
+# sudo npm install --global gulp-cli
 # sudo npm install -g ios-deploy --unsafe-perm=true
 
 echo "cleanup"
