@@ -37,6 +37,9 @@ echo "install node"
 brew update
 brew install node
 
+#update npm to the latest version
+sudo npm install npm@latest -g
+
 #install global composer
 echo "install composer"
 brew install homebrew/php/composer
