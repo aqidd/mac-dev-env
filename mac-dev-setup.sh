@@ -33,9 +33,14 @@ echo "update coreutils path"
 echo 'export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.bash_profile
 
 #install node
-echo "install node"
+echo "install n , node version manager"
 brew update
-brew install node
+#brew install node
+brew install n
+
+#install some versions of node
+sudo n tls
+sudo n latest
 
 #update npm to the latest version
 sudo npm install npm@latest -g
