@@ -128,7 +128,8 @@ echo 'export JAVA_HOME=$(/usr/libexec/java_home)' >> ~/.bash_profile
 echo '# Add that to the global PATH variable' >> ~/.bash_profile
 echo 'export PATH=${JAVA_HOME}/bin:$PATH' >> ~/.bash_profile
 echo '# Add the Android SDK to the PATH variable' >> ~/.bash_profile
-echo 'export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools' >> ~/.bash_profile
+echo 'export ANDROID_HOME=~/Library/Android/sdk' >> ~/.bash_profile
+echo 'export PATH=${PATH}:{$ANDROID_HOME}/tools:{$ANDROID_HOME}/platform-tools' >> ~/.bash_profile
 
 #install cocoapods
 brew install cocoapods
