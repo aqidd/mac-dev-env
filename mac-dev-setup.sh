@@ -76,6 +76,7 @@ brew tap caskroom/cask
 
 apps=(
 	appcleaner
+	appium
 	android-studio
 	android-file-transfer
 	androidtool
@@ -88,6 +89,7 @@ apps=(
 	imageoptim
 	java
 	macdown
+	nomachine
 	onyx
 	postgres
 	postman
@@ -175,6 +177,10 @@ killall Dock
 # sudo npm install -g ios-sim
 # sudo npm install --global gulp-cli
 # sudo npm install -g ios-deploy --unsafe-perm=true
+
+#extras: appium setup
+#npm install -g appium
+#npm install wd 
 
 echo "cleanup"
 brew cleanup
