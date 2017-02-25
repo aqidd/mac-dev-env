@@ -170,17 +170,25 @@ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</
 #restart dock
 killall Dock
 
-#extras: ionic & cordova for hybrid mobile app development
-# sudo npm install -g cordova
-# sudo npm install -g ionic
-# sudo npm install -g ionic@1.7.16 #for your old ionic project
-# sudo npm install -g ios-sim
-# sudo npm install --global gulp-cli
-# sudo npm install -g ios-deploy --unsafe-perm=true
-
-#extras: appium setup
-#npm install -g appium
-#npm install wd 
+#extras: check for extra arguments
+for var in "$@"
+  do
+    if [ "$var" == "ionic" ]; then
+	sudo npm install -g cordova
+	sudo npm install -g ionic
+	sudo npm install -g ionic@1.7.16 #for your old ionic project
+	sudo npm install -g ios-sim
+	sudo npm install --global gulp-cli
+	sudo npm install -g ios-deploy --unsafe-perm=true
+    elif [ "$var" == "appium" ]; then
+	npm install -g appium
+	npm install wd 
+    elif [ "$var" == "oh-my-zsh" ]; then
+    	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    else
+    	echo $var + " argument is not supported"
+    fi
+  done
 
 echo "cleanup"
 brew cleanup
