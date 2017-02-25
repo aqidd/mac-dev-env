@@ -2,11 +2,10 @@
 --
 A simple bash script for initializing your development environment for after you setup / reset your macOS.
 
-### Important: You need to install Xcode first before running this script
-
 This script will automatically do these following tasks :
 
 - Installing homebrew
+- Installing xcodeutil
 - Updating macOS coreutils library
 - Install findutils library
 - Install bash
@@ -54,4 +53,5 @@ This script will automatically do these following tasks :
 - Install LINE Messenger & Telegram Desktop
 - Add google chrome, android studio, xcode, spotify, sourcetree, sublime to macOS Dock
 
-
+### 25 Feb 2107 :
+- Added options for command line arguments. Supported arguments are : `ionic`, `appium` and `oh-my-zsh`
