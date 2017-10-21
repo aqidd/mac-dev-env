@@ -17,8 +17,11 @@ This script will automatically do these following tasks :
 - Install mariadb
 - Install bower
 - Install brew cask
-- Install these apps : appcleaner
+- Install these apps : 
+	appcleaner
+	appium
 	android-studio
+	android-sdk
 	android-file-transfer
 	androidtool
 	caffeine
@@ -28,8 +31,13 @@ This script will automatically do these following tasks :
 	flux
 	google-chrome
 	imageoptim
+	java8
+	macdown
+	nomachine
 	onyx
+	postgres
 	postman
+	puush
 	qlcolorcode
   	qlimagesize
 	qlmarkdown
@@ -46,12 +54,19 @@ This script will automatically do these following tasks :
 	spotify
 	sublime-text
 	suspicious-package
-	tinygrab
 	the-unarchiver
 	vlc
+	veertu-desktop
+	visual-studio-code
+	zeplin
 - Install mas package
 - Install LINE Messenger & Telegram Desktop
 - Add google chrome, android studio, xcode, spotify, sourcetree, sublime to macOS Dock
+
+### 11 Oct 2017 :
+- Added options for `deployd` platform
+- Add visual-studio-code
+- install java8 instead of java9 because of android-sdk cask [issue](https://github.com/caskroom/homebrew-cask/issues/39238)
 
 ### 25 Feb 2107 :
 - Added options for command line arguments. Supported arguments are : `ionic`, `appium` and `oh-my-zsh`

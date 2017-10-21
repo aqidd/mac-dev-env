@@ -39,7 +39,7 @@ brew update
 brew install n
 
 #install some versions of node
-sudo n tls
+sudo n lts
 sudo n latest
 
 #update npm to the latest version
@@ -78,16 +78,18 @@ apps=(
 	appcleaner
 	appium
 	android-studio
+	android-sdk
 	android-file-transfer
 	androidtool
 	caffeine
+	cyberduck
 	evernote
 	firefox
 	filezilla
 	flux
 	google-chrome
 	imageoptim
-	java
+	java8 # java 9 will make android-sdk installation failed
 	macdown
 	nomachine
 	onyx
@@ -113,14 +115,13 @@ apps=(
 	the-unarchiver
 	vlc
 	veertu-desktop
+	visual-studio-code
 	zeplin
 )
 
 echo “installing apps”
 brew cask install --appdir="/Applications" ${apps[@]}
 
-#install android-sdk
-brew install android-sdk
 #update platform-tools
 android update sdk --no-ui --filter 'platform-tools'
 
@@ -174,17 +175,24 @@ killall Dock
 for var in "$@"
   do
     if [ "$var" == "ionic" ]; then
-	sudo npm install -g cordova
-	sudo npm install -g ionic
-	sudo npm install -g ionic@1.7.16 #for your old ionic project
-	sudo npm install -g ios-sim
-	sudo npm install --global gulp-cli
-	sudo npm install -g ios-deploy --unsafe-perm=true
+		sudo npm install -g cordova
+		sudo npm install -g ionic
+		sudo npm install -g ionic@1.7.16 #for your old ionic project
+		sudo npm install -g ios-sim
+		sudo npm install --global gulp-cli
+		sudo npm install -g ios-deploy --unsafe-perm=true
     elif [ "$var" == "appium" ]; then
-	npm install -g appium
-	npm install wd 
+		npm install -g appium
+		npm install wd 
     elif [ "$var" == "oh-my-zsh" ]; then
     	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    elif [ “$var” == “deployd” ]; then
+		sudo npm install -g deployd-cli
+		sudo npm install -g forever
+		brew update
+		brew install mongodb
+		sudo mkdir -p /data/db
+		brew services start mongodb
     else
     	echo $var + " argument is not supported"
     fi
