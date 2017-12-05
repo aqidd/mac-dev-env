@@ -63,12 +63,9 @@ echo "install mariadb"
 brew install mariadb
 brew services start mariadb
 
-#npm install bower
-echo "install bower"
-npm install -g bower
-
 echo "cleanup"
 brew cleanup
+brew update
 
 #install brew cask
 echo "install brew cask"
@@ -83,13 +80,14 @@ apps=(
 	androidtool
 	caffeine
 	cyberduck
+	coconutbattery
 	evernote
 	firefox
 	filezilla
 	flux
 	google-chrome
 	imageoptim
-	java8 # java 9 will make android-sdk installation failed
+	caskroom/versions/java8 # java 9 will make android-sdk installation failed
 	macdown
 	nomachine
 	onyx
@@ -110,20 +108,17 @@ apps=(
 	spectacle
 	sourcetree
 	spotify
+	steam
 	sublime-text
 	suspicious-package
 	the-unarchiver
 	vlc
-	veertu-desktop
 	visual-studio-code
 	zeplin
 )
 
 echo “installing apps”
 brew cask install --appdir="/Applications" ${apps[@]}
-
-#update platform-tools
-android update sdk --no-ui --filter 'platform-tools'
 
 #add JAVA_HOME & ANDROID_HOME
 echo '# Create a JAVA_HOME variable, determined dynamically' >> ~/.bash_profile
@@ -148,6 +143,8 @@ mas install 946399090
 
 #install XCode
 mas install 497799835
+
+sudo xcodebuild -license accept
 
 #add to dock
 #google chrome
@@ -182,7 +179,7 @@ for var in "$@"
 		sudo npm install --global gulp-cli
 		sudo npm install -g ios-deploy --unsafe-perm=true
     elif [ "$var" == "appium" ]; then
-		npm install -g appium
+		sudo npm install -g appium
 		npm install wd 
     elif [ "$var" == "oh-my-zsh" ]; then
     	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
