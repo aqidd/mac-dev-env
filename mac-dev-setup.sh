@@ -89,6 +89,7 @@ apps=(
 	imageoptim
 	caskroom/versions/java8 # java 9 will make android-sdk installation failed
 	macdown
+	macs-fan-control
 	nomachine
 	onyx
 	postgres
