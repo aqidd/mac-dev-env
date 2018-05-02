@@ -196,6 +196,12 @@ for var in "$@"
     fi
   done
 
+#install docker
+brew cask install docker
+
+#install aws cli
+brew install awscli
+
 echo "cleanup"
 brew cleanup
 brew cask cleanup
