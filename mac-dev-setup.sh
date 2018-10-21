@@ -47,11 +47,12 @@ sudo npm install npm@latest -g
 
 #install global composer
 echo "install composer"
-brew install homebrew/php/composer
+brew install composer
 
 #install laravel valet
 echo "install valet"
-brew install homebrew/php/php70
+brew install php 
+
 echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
 composer global require laravel/valet
 echo 'export PATH=~/.composer/vendor/bin:$PATH' >> ~/.bash_profile
@@ -62,6 +63,12 @@ valet install
 echo "install mariadb"
 brew install mariadb
 brew services start mariadb
+
+#install getsdk
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+sdk install java
 
 echo "cleanup"
 brew cleanup
@@ -85,12 +92,11 @@ apps=(
 	firefox
 	filezilla
 	flux
+	fish
 	google-chrome
 	imageoptim
-	caskroom/versions/java8 # java 9 will make android-sdk installation failed
 	macdown
 	macs-fan-control
-	nomachine
 	onyx
 	postgres
 	postman
@@ -121,14 +127,11 @@ apps=(
 echo “installing apps”
 brew cask install --appdir="/Applications" ${apps[@]}
 
-#add JAVA_HOME & ANDROID_HOME
-echo '# Create a JAVA_HOME variable, determined dynamically' >> ~/.bash_profile
-echo 'export JAVA_HOME=$(/usr/libexec/java_home)' >> ~/.bash_profile
-echo '# Add that to the global PATH variable' >> ~/.bash_profile
-echo 'export PATH=${JAVA_HOME}/bin:$PATH' >> ~/.bash_profile
+#ANDROID_HOME
 echo '# Add the Android SDK to the PATH variable' >> ~/.bash_profile
-echo 'export ANDROID_HOME=~/Library/Android/sdk' >> ~/.bash_profile
-echo 'export PATH=${PATH}:{$ANDROID_HOME}/tools:{$ANDROID_HOME}/platform-tools' >> ~/.bash_profile
+echo 'export ANDROID_NDK_HOME=/usr/local/share/android-ndk' >> ~/.bash_profile
+echo 'export ANDROID_SDK_ROOT=/usr/local/share/android-sdk' >> ~/.bash_profile
+echo 'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.bash_profile
 
 #install cocoapods
 brew install cocoapods
@@ -165,6 +168,9 @@ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</
 
 #sublime
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Sublime Text.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+
+#vscode
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio Code.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
 #restart dock
 killall Dock
@@ -204,4 +210,5 @@ brew install awscli
 
 echo "cleanup"
 brew cleanup
-brew cask cleanup
+
+echo "installation finished, please check your bash_profile, path and other settings to make sure nothing is wrong"
