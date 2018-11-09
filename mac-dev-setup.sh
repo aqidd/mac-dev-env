@@ -127,6 +127,9 @@ apps=(
 echo “installing apps”
 brew cask install --appdir="/Applications" ${apps[@]}
 
+#install fisher and sdkman support
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
 #ANDROID_HOME
 echo '# Add the Android SDK to the PATH variable' >> ~/.bash_profile
 echo 'export ANDROID_NDK_HOME=/usr/local/share/android-ndk' >> ~/.bash_profile
@@ -211,4 +214,5 @@ brew install awscli
 echo "cleanup"
 brew cleanup
 
+echo "please open fish and add sdkman support fisher add reitzig/sdkman-for-fish"
 echo "installation finished, please check your bash_profile, path and other settings to make sure nothing is wrong"
