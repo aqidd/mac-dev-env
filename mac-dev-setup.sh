@@ -97,6 +97,7 @@ apps=(
 	imageoptim
 	macdown
 	macs-fan-control
+	notion
 	onyx
 	postgres
 	postman
