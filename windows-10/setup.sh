@@ -60,7 +60,7 @@ choco feature enable -n allowGlobalConfirmation
 choco install BatteryBar GoogleChrome intellijidea-community notion telegram vscode
 
 #optional
-choco install docker-desktop glaryutilities-free Kindle puush
+choco install docker-desktop glaryutilities-free Kindle puush powershell-core
 
 # enable wsl 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
