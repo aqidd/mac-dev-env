@@ -8,6 +8,7 @@ scoop bucket add extras
 scoop-apps=(
     adb
     android-studio
+    anaconda3
     android-sdk
     firefox
     foxit-reader
