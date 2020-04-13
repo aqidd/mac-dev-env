@@ -56,28 +56,14 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 choco feature enable -n allowGlobalConfirmation
 
-choco-apps=(
-    BatteryBar
-    Cygwin
-    docker-desktop
-    GoogleChrome
-    glaryutilities-free
-    intellijidea-community
-    Kindle
-    notion
-    puush
-    sumatrapdf
-    telegram
-    vscode
-    wisemo
-    xmind
-)
+choco install BatteryBar GoogleChrome intellijidea-community notion telegram vscode
 
-choco install ${choco-apps[@]}
-
-wget "https://www.descript.com/download/windows"
+#optional
+choco install docker-desktop glaryutilities-free Kindle puush
 
 # enable wsl 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+wget "https://www.descript.com/download/windows"
 
 echo 'please continue setting up you wsl environment manually'
