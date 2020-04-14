@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'explorer=/mnt/c/Windows/explorer.exe' >> ~/.bash_aliases
+echo 'alias explorer=/mnt/c/Windows/explorer.exe' >> ~/.bash_aliases
 
 sudo apt install build-essential
 
