@@ -34,3 +34,13 @@ sudo apt install --no-install-recommends yarn
 yes | apt-get install fish
 # make fish default
 chsh -s /usr/bin/fish
+
+# install anaconda
+cd /tmp/
+curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+sha256sum Anaconda3-2019.03-Linux-x86_64.sh
+bash Anaconda3-2019.03-Linux-x86_64.sh
+bash
+source ~/.bashrc
+fish
+cd /root/
