@@ -3,5 +3,6 @@ A collection of setup files for your development environment in different operat
 
 ## How to use
 UNIX: sh [filename].sh
+
 Windows: not yet automated lol
 
