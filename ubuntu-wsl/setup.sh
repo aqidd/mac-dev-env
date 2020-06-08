@@ -2,7 +2,7 @@
 
 echo 'alias explorer=/mnt/c/Windows/explorer.exe' >> ~/.bash_aliases
 
-sudo apt install build-essential
+yes | sudo apt install build-essential
 
 # npm & nvm node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -16,8 +16,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
-sudo apt install docker-ce
+yes | sudo apt install docker-ce
 sudo service docker start
+sudo chmod 666 /var/run/docker.sock
 
 # install docker compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
