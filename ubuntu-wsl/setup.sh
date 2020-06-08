@@ -31,7 +31,7 @@ sudo apt update
 sudo apt install --no-install-recommends yarn
 
 # install fish shell
-yes | apt-get install fish
+yes | sudo apt-get install fish
 # make fish default
 chsh -s /usr/bin/fish
 
